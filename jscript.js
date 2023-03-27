@@ -7,3 +7,6 @@ function getComputerChoice() {
     return choice[Math.floor(Math.random() * choice.length)];
 }
 
+// Selection variables
+const computerSelection = getComputerChoice();
+const playerSelection = "rock"
