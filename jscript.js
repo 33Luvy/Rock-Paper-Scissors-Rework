@@ -8,7 +8,7 @@ function getComputerChoice() {
 }
 
 // Selection variables
-const computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
 const playerSelection = "rock"
 
 // Function for playing one round
@@ -17,18 +17,28 @@ function playRound(computerSelection, playerSelection) {
     if ((playerSelection == "rock" && computerSelection == "scissors")  || 
         (playerSelection == "paper" && computerSelection == "rock")     || 
         (playerSelection == "scissors" && computerSelection == "paper")) {
-
-        console.log("Player wins!")
+        return("Player wins!")
     }
     else if ((playerSelection == "rock" && computerSelection == "paper")     || 
              (playerSelection == "paper" && computerSelection == "scissors") || 
              (playerSelection == "scissors" && computerSelection == "rock"))  {
 
-        console.log("Computer wins!")
+        return("Computer wins!")
     }
     // If both inputs are the same its a draw
     else {
-        console.log("Draw!")
+        return("Draw!")
     }
 }
 
+// Function for playing the full game
+function game() {
+    // Loop that repeats 5 times
+    for (i = 0 ;i < 5; i++) {
+        getComputerChoice()
+        let computerSelection = getComputerChoice();
+        console.log(playRound(computerSelection, playerSelection))
+    }
+}
+
+game()
