@@ -1,3 +1,7 @@
+// Global Variables
+let gameRound = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 // Function for computer choice
 function getComputerChoice() {
