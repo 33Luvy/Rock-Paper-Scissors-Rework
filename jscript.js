@@ -21,27 +21,39 @@ function playRound(computerSelection, playerSelection) {
     if ((playerSelection == "rock" && computerSelection == "scissors")  || 
         (playerSelection == "paper" && computerSelection == "rock")     || 
         (playerSelection == "scissors" && computerSelection == "paper")) {
-        return("Player wins!")
+            return(playerScore += 1, gameRound += 1)
     }
     else if ((playerSelection == "rock" && computerSelection == "paper")     || 
              (playerSelection == "paper" && computerSelection == "scissors") || 
              (playerSelection == "scissors" && computerSelection == "rock"))  {
-
-        return("Computer wins!")
+                return(computerScore += 1, gameRound += 1)
     }
     // If both inputs are the same its a draw
     else {
-        return("Draw!")
+        return(gameRound += 1)
     }
 }
 
 // Function for playing the full game
 function game() {
-    // Loop that repeats 5 times
-    for (i = 0 ;i < 5; i++) {
+    // Loop that repeats 6 times in order for the last increment to display result
+    for (i = 0 ;i < 6; i++) {
+        if (gameRound == 5) {
+            if (playerScore > computerScore) {
+                console.log('Player Wins!')
+            }
+            else if (computerScore > playerScore) {
+                console.log('Computer Wins!')
+            }
+            else if (computerScore == playerScore) {
+                console.log('Its a draw!') 
+            }
+        }
+        else {
         getComputerChoice()
         let computerSelection = getComputerChoice();
-        console.log(playRound(computerSelection, playerSelection))
+        playRound(computerSelection, playerSelection)
+        }
     }
 }
 
