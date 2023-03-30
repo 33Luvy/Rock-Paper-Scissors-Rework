@@ -11,9 +11,13 @@ function getComputerChoice() {
     return choice[Math.floor(Math.random() * choice.length)];
 }
 
-// Selection variables
+// Function for getting player choice
+function getPlayerChoice() {
+    let playerChoice = prompt('Rock, Paper or Scissors?')
+    return playerChoice.toLowerCase()
+}
+// Selection variable
 let computerSelection = getComputerChoice();
-const playerSelection = "rock"
 
 // Function for playing one round
 function playRound(computerSelection, playerSelection) {
@@ -48,11 +52,14 @@ function game() {
             else if (computerScore == playerScore) {
                 console.log('Its a draw!') 
             }
+        break
         }
         else {
-        getComputerChoice()
+        let playerSelection = prompt('Rock, Paper or Scissors?')
+        playerSelection.toLowerCase
+        getComputerChoice();
         let computerSelection = getComputerChoice();
-        playRound(computerSelection, playerSelection)
+        playRound(computerSelection, playerSelection);
         }
     }
 }
