@@ -21,17 +21,18 @@ function playRound(computerSelection, playerSelection) {
     if ((playerSelection == "rock" && computerSelection == "scissors")  || 
         (playerSelection == "paper" && computerSelection == "rock")     || 
         (playerSelection == "scissors" && computerSelection == "paper")) {
-            console.log("Win")
+            scoreDisplay.textContent = 'Win'
             return(playerScore += 1, gameRound += 1)
     }
     else if ((playerSelection == "rock" && computerSelection == "paper")     || 
              (playerSelection == "paper" && computerSelection == "scissors") || 
              (playerSelection == "scissors" && computerSelection == "rock"))  {
-                console.log("Lose")
+                scoreDisplay.textContent = 'Lose'
                 return(computerScore += 1, gameRound += 1)
     }
     // If both inputs are the same its a draw
     else {
+        scoreDisplay.textContent = 'Draw'
         return(gameRound += 1)
     }
 }
@@ -45,6 +46,7 @@ function playRound(computerSelection, playerSelection) {
 const rockBtn = document.querySelector('#rock')
 const paperBtn = document.querySelector('#paper')
 const scissorsBtn = document.querySelector('#scissors')
+const scoreDisplay = document.querySelector('#score')
 
 rockBtn.onclick = () => {
     let playerSelection = "rock"
@@ -64,4 +66,6 @@ scissorsBtn.onclick = () => {
     let computerSelection = getComputerChoice();
     playRound(computerSelection, playerSelection)
 };
+
+
 
