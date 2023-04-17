@@ -11,11 +11,7 @@ function getComputerChoice() {
     return choice[Math.floor(Math.random() * choice.length)];
 }
 
-// Function for getting player choice
-function getPlayerChoice() {
-    let playerChoice = prompt('Rock, Paper or Scissors?')
-    return playerChoice.toLowerCase()
-}
+
 // Selection variable
 let computerSelection = getComputerChoice();
 
@@ -25,11 +21,13 @@ function playRound(computerSelection, playerSelection) {
     if ((playerSelection == "rock" && computerSelection == "scissors")  || 
         (playerSelection == "paper" && computerSelection == "rock")     || 
         (playerSelection == "scissors" && computerSelection == "paper")) {
+            console.log("Win")
             return(playerScore += 1, gameRound += 1)
     }
     else if ((playerSelection == "rock" && computerSelection == "paper")     || 
              (playerSelection == "paper" && computerSelection == "scissors") || 
              (playerSelection == "scissors" && computerSelection == "rock"))  {
+                console.log("Lose")
                 return(computerScore += 1, gameRound += 1)
     }
     // If both inputs are the same its a draw
@@ -38,30 +36,32 @@ function playRound(computerSelection, playerSelection) {
     }
 }
 
-// Function for playing the full game
-function game() {
-    // Loop that repeats 6 times in order for the last increment to display result
-    for (i = 0 ;i < 6; i++) {
-        if (gameRound == 5) {
-            if (playerScore > computerScore) {
-                console.log('Player Wins!')
-            }
-            else if (computerScore > playerScore) {
-                console.log('Computer Wins!')
-            }
-            else if (computerScore == playerScore) {
-                console.log('Its a draw!') 
-            }
-        break
-        }
-        else {
-        let playerSelection = prompt('Rock, Paper or Scissors?')
-        playerSelection.toLowerCase
-        getComputerChoice();
-        let computerSelection = getComputerChoice();
-        playRound(computerSelection, playerSelection);
-        }
-    }
-}
 
-game()
+//       let playerSelection = prompt('Rock, Paper or Scissors?')
+//       playerSelection.toLowerCase
+//       getComputerChoice();
+//       let computerSelection = getComputerChoice();
+
+const rockBtn = document.querySelector('#rock')
+const paperBtn = document.querySelector('#paper')
+const scissorsBtn = document.querySelector('#scissors')
+
+rockBtn.onclick = () => {
+    let playerSelection = "rock"
+    getComputerChoice();
+    let computerSelection = getComputerChoice();
+    playRound(computerSelection, playerSelection)
+};
+paperBtn.onclick = () => {
+    let playerSelection = "paper"
+    getComputerChoice();
+    let computerSelection = getComputerChoice();
+    playRound(computerSelection, playerSelection)
+};
+scissorsBtn.onclick = () => {
+    let playerSelection = "scissors"
+    getComputerChoice();
+    let computerSelection = getComputerChoice();
+    playRound(computerSelection, playerSelection)
+};
+
