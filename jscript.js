@@ -46,7 +46,7 @@ function playRound(computerSelection, playerSelection) {
 const rockBtn = document.querySelector('#rock')
 const paperBtn = document.querySelector('#paper')
 const scissorsBtn = document.querySelector('#scissors')
-const scoreDisplay = document.querySelector('#score')
+const scoreDisplay = document.querySelector('#gameResult')
 
 rockBtn.onclick = () => {
     let playerSelection = "rock"
