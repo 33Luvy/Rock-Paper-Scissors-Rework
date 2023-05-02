@@ -7,7 +7,7 @@ body {
     justify-content: space-around;  
 }
 
-.playerScore, .computerScore {
+.pScoreDisplay, .cScoreDisplay {
     display: flex;
     flex-direction: column;
     align-items: center;

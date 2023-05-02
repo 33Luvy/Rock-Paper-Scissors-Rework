@@ -22,13 +22,20 @@ function playRound(computerSelection, playerSelection) {
         (playerSelection == "paper" && computerSelection == "rock")     || 
         (playerSelection == "scissors" && computerSelection == "paper")) {
             scoreDisplay.textContent = 'Win'
-            return(playerScore += 1, gameRound += 1)
+            return(playerScore += 1,
+                   gameRound += 1, 
+                   playerCount.textContent = (playerScore),
+                   computerCount.textContent = (computerScore) )
     }
     else if ((playerSelection == "rock" && computerSelection == "paper")     || 
              (playerSelection == "paper" && computerSelection == "scissors") || 
              (playerSelection == "scissors" && computerSelection == "rock"))  {
                 scoreDisplay.textContent = 'Lose'
-                return(computerScore += 1, gameRound += 1)
+                computerCount.textContent = (computerScore)
+                return(computerScore += 1, 
+                       gameRound += 1,
+                       playerCount.textContent = (playerScore),
+                       computerCount.textContent = (computerScore))
     }
     // If both inputs are the same its a draw
     else {
@@ -38,34 +45,66 @@ function playRound(computerSelection, playerSelection) {
 }
 
 
-//       let playerSelection = prompt('Rock, Paper or Scissors?')
-//       playerSelection.toLowerCase
-//       getComputerChoice();
-//       let computerSelection = getComputerChoice();
-
 const rockBtn = document.querySelector('#rock')
 const paperBtn = document.querySelector('#paper')
 const scissorsBtn = document.querySelector('#scissors')
 const scoreDisplay = document.querySelector('#gameResult')
+const playerCount = document.querySelector('.playerScore')
+const computerCount = document.querySelector('.computerScore')
+const winnerDisplay = document.querySelector('#winnerDisplay')
+
+
+
 
 rockBtn.onclick = () => {
     let playerSelection = "rock"
     getComputerChoice();
     let computerSelection = getComputerChoice();
     playRound(computerSelection, playerSelection)
+    if (gameRound == 5) {
+        if (playerScore > computerScore) {
+            winnerDisplay.textContent = 'Player Wins'
+        }
+        else if (playerScore < computerScore) {
+            winnerDisplay.textContent = 'Computer Wins'
+        }
+        else {
+            winnerDisplay.textContent = 'It\'s a Draw'
+        }
+    }
 };
 paperBtn.onclick = () => {
     let playerSelection = "paper"
     getComputerChoice();
     let computerSelection = getComputerChoice();
     playRound(computerSelection, playerSelection)
+    if (gameRound == 5) {
+        if (playerScore > computerScore) {
+            winnerDisplay.textContent = 'Player Wins'
+        }
+        else if (playerScore < computerScore) {
+            winnerDisplay.textContent = 'Computer Wins'
+        }
+        else {
+            winnerDisplay.textContent = 'It\'s a Draw'
+        }
+    }
 };
 scissorsBtn.onclick = () => {
     let playerSelection = "scissors"
     getComputerChoice();
     let computerSelection = getComputerChoice();
     playRound(computerSelection, playerSelection)
+    if (gameRound == 5) {
+        if (playerScore > computerScore) {
+            winnerDisplay.textContent = 'Player Wins'
+        }
+        else if (playerScore < computerScore) {
+            winnerDisplay.textContent = 'Computer Wins'
+        }
+        else {
+            winnerDisplay.textContent = 'It\'s a Draw'
+        }
+    }
 };
-
-
 
