@@ -72,6 +72,9 @@ rockBtn.onclick = () => {
             winnerDisplay.textContent = 'It\'s a Draw'
         }
     }
+    else if (gameRound > 5) {
+        location.reload();
+    }
 };
 paperBtn.onclick = () => {
     let playerSelection = "paper"
@@ -89,6 +92,9 @@ paperBtn.onclick = () => {
             winnerDisplay.textContent = 'It\'s a Draw'
         }
     }
+    else if (gameRound > 5) {
+        location.reload();
+    }
 };
 scissorsBtn.onclick = () => {
     let playerSelection = "scissors"
@@ -105,6 +111,9 @@ scissorsBtn.onclick = () => {
         else {
             winnerDisplay.textContent = 'It\'s a Draw'
         }
+    }
+    else if (gameRound > 5) {
+        location.reload();
     }
 };
 
