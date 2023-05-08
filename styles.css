@@ -1,23 +1,23 @@
 body {
-    background-color: blueviolet;
+    background-color: rgb(49, 47, 51);
 }
 
 .scoreDisplay {
-    display: flex;  
-    justify-content: space-around;  
-}
-
-.pScoreDisplay, .cScoreDisplay {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-color: black;
-    border-style: groove;
+    padding: 10%;  
+    justify-content: space-around;  
 }
 
 #buttons {
     display: flex;
-    justify-content: center;
+    padding: 8px 20%;
+    justify-content: space-around;
+}
+#resultDisplay {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 header {
@@ -26,4 +26,8 @@ header {
     padding: 8px 10%;
     background-color: #1f1e1e;
     color: aliceblue;
+}
+
+button {
+    background-color: #4d4949;
 }
