@@ -96,6 +96,7 @@ paperBtn.onclick = () => {
         location.reload();
     }
 };
+
 scissorsBtn.onclick = () => {
     let playerSelection = "scissors"
     getComputerChoice();
